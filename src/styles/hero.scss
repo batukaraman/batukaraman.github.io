@@ -1,0 +1,58 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+  height: 100ch;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+    text-align: center;
+  }
+
+  &__text {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__greeting {
+    font-size: 1.78rem;
+  }
+
+  &__title {
+    font-size: 1.78rem;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+
+    .blob {
+      background: url("./image/kare.jpg");
+      background-size: cover;
+      background-position: center center;
+      max-width: 500px;
+      width: 100%;
+      aspect-ratio: 1/1;
+      box-shadow: rgba(0, 122, 255, 0.4) -5px 5px,
+        rgba(0, 122, 255, 0.3) -10px 10px, rgba(0, 122, 255, 0.2) -15px 15px,
+        rgba(0, 122, 255, 0.1) -20px 20px, rgba(0, 122, 255, 0.05) -25px 25px;
+      animation: animate 5s ease-in-out infinite;
+      transition: all 1s ease-in-out;
+
+      @keyframes animate {
+        0% {
+          border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        }
+        50% {
+          border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+        }
+        100% {
+          border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        }
+      }
+    }
+  }
+}

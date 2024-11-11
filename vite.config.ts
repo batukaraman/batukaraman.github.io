@@ -5,7 +5,14 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": "/src", // /src kök dizin olduğundan doğru ayar
+      "@": "/src",
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+      },
     },
   },
 });
