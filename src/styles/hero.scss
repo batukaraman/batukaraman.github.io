@@ -1,14 +1,22 @@
+@use "./variables.scss" as *;
+
 .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 2rem;
-  height: 100ch;
+  height: 100vh;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-auto-rows: max-content;
     text-align: center;
+    height: auto;
   }
 
   &__text {
@@ -18,11 +26,12 @@
   }
 
   &__greeting {
-    font-size: 1.78rem;
+    font-size: $text-size-lg;
   }
 
   &__title {
-    font-size: 1.78rem;
+    font-size: $text-size-xl;
+    font-weight: 400;
   }
 
   &__image {
@@ -30,7 +39,7 @@
     justify-content: center;
 
     .blob {
-      background: url("./image/kare.jpg");
+      background: url("./image/profile.jpg");
       background-size: cover;
       background-position: center center;
       max-width: 500px;

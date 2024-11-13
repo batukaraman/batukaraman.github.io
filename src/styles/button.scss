@@ -1,0 +1,85 @@
+@use "./variables.scss" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  // Variant styles
+  &.primary {
+    background-color: $light-blue-0;
+    color: $color-white;
+  }
+
+  &.secondary {
+    background-color: $color-white;
+    color: $color-black;
+    border: 1px solid $light-blue-70;
+  }
+
+  &.tertiary {
+    background-color: transparent;
+    color: $color-black;
+  }
+
+  :is(&.primary, &.secondary):disabled {
+    background-color: $light-blue-70;
+    cursor: default;
+  }
+
+  &.tertiary:disabled {
+    background-color: $color-white;
+    color: $light-blue-70;
+  }
+
+  // Size styles
+  &.sm {
+    padding: 0 8px;
+    font-size: 14px;
+    height: 32px;
+    border-radius: 2px;
+  }
+
+  &.md {
+    padding: 0 16px;
+    font-size: 16px;
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  &.lg {
+    padding: 0 16px;
+    font-size: 18px;
+    height: 48px;
+    border-radius: 6px;
+  }
+
+  // Icon styles
+  .icon {
+    height: 1em;
+    width: 1em;
+  }
+
+  &.only-icon {
+    padding: 0 8px;
+
+    &.sm .only-icon-size {
+      width: 16px;
+      height: 16px;
+    }
+
+    &.md .only-icon-size {
+      width: 24px;
+      height: 24px;
+    }
+
+    &.lg .only-icon-size {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

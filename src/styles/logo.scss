@@ -1,0 +1,8 @@
+@use "./variables.scss" as *;
+
+.logo {
+  font-weight: 600;
+  text-wrap: nowrap;
+  color: $color-black;
+  text-decoration: none;
+}

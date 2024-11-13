@@ -1,0 +1,31 @@
+@use "./variables.scss" as *;
+
+.header {
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  background-color: $color-white;
+  position: sticky;
+  top: 0;
+  transition: 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &.not-top {
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  }
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+  }
+}

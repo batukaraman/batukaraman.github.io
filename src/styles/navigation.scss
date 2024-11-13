@@ -1,0 +1,68 @@
+@use "./variables.scss" as *;
+
+.navigation {
+  display: flex;
+  background-color: $color-white;
+  justify-content: end;
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    padding: 16px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+
+    width: 100%;
+
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.2s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  &.visible {
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  &__body {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    color: $color-black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    text-align: center;
+    padding: 8px 0;
+
+    &:hover {
+      color: $light-blue-0;
+    }
+
+    &.active {
+      color: $light-blue-0;
+    }
+  }
+
+  &__toggle {
+    visibility: hidden;
+
+    @media screen and (max-width: 768px) {
+      visibility: visible;
+    }
+  }
+}
