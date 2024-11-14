@@ -7,18 +7,35 @@
   gap: 4px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
   font-family: inherit;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: all 0.2s ease-in-out;
 
-  // Variant styles
   &.primary {
     background-color: $light-blue-0;
     color: $color-white;
+    &:hover {
+      border-color: rgba($blue-70, 0.15);
+      box-shadow: rgba($blue-70, 0.1) 0 4px 12px;
+      transform: translateY(-1px);
+    }
   }
 
   &.secondary {
     background-color: $color-white;
-    color: $color-black;
-    border: 1px solid $light-blue-70;
+    border: 1px solid rgba($blue-70, 0.1);
+    box-shadow: rgba($blue-70, 0.02) 0 1px 3px 0;
+    color: rgba($blue-70, 0.85);
+
+    &:hover {
+      border-color: rgba($blue-70, 0.15);
+      box-shadow: rgba($blue-70, 0.1) 0 4px 12px;
+      color: rgba($blue-70, 0.65);
+      transform: translateY(-1px);
+    }
   }
 
   &.tertiary {
@@ -36,7 +53,6 @@
     color: $light-blue-70;
   }
 
-  // Size styles
   &.sm {
     padding: 0 8px;
     font-size: 14px;
@@ -58,10 +74,25 @@
     border-radius: 6px;
   }
 
-  // Icon styles
   .icon {
     height: 1em;
     width: 1em;
+  }
+
+  @keyframes downloadAnimation {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  &:hover .icon.download {
+    animation: downloadAnimation 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
   &.only-icon {

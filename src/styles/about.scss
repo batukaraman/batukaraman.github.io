@@ -1,0 +1,110 @@
+@use "./variables.scss" as *;
+
+.about {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 100vh;
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content;
+    align-items: center;
+    gap: 5rem;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &_features {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+
+    @media screen and (max-width: 1024px) {
+      order: 1;
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+.features-card {
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: -10px -10px 30px 0 #fff,
+    10px 10px 30px 0 rgba($color: $blue-10, $alpha: 0.3);
+  background-color: $color-white;
+
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 2/1;
+
+  &:nth-child(2) {
+    aspect-ratio: 2/2;
+  }
+
+  &__icon {
+    color: $blue-0;
+    font-size: 2rem;
+  }
+
+  &__title {
+    font-size: $text-size-md;
+    font-weight: 500;
+    line-height: 1em;
+  }
+
+  &__value {
+    font-size: $text-size-2xl;
+    font-weight: 600;
+    line-height: 1em;
+    color: $blue-0;
+  }
+
+  &__subtitle {
+    color: rgba($color: $blue-70, $alpha: 0.7);
+    font-size: $text-size-md;
+    margin-left: 0.3rem;
+  }
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(1rem, 2.5vw, 2rem);
+
+  &__tagline {
+    color: rgba($color: $blue-70, $alpha: 0.7);
+  }
+}

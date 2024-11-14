@@ -10,14 +10,16 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-weight: false;
   line-height: 1.65;
-  background-color: $color-white;
-  color: $color-black;
+  background-color: #f2f4f9;
+  color: $blue-70;
 }
 
 p {
@@ -31,8 +33,7 @@ h4,
 h5,
 h6 {
   font-family: "Open Sans", sans-serif;
-  font-weight: true;
-  line-height: 1.15;
+  line-height: 1.5;
 }
 
 h1,
@@ -68,4 +69,46 @@ h6,
 small,
 .text-small {
   font-size: $text-size-xs;
+}
+
+header {
+  padding: 1rem;
+}
+
+section {
+  padding: 0 1rem;
+}
+
+section {
+  padding-top: clamp(2rem, 2.5vw, 5rem);
+}
+
+:has(> .animated-icon):hover .download {
+  animation: download 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+:has(> .animated-icon):hover .envelope {
+  animation: envelope 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes download {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes envelope {
+  0% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }

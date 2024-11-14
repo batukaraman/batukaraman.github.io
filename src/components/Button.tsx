@@ -11,6 +11,8 @@ type ButtonType = {
   disable?: boolean;
   classNames?: string;
   onClick?: () => void;
+  href?: string;
+  download?: boolean;
 };
 
 function Button({
@@ -23,8 +25,39 @@ function Button({
   disable = false,
   classNames,
   onClick,
+  href,
+  download,
 }: ButtonType) {
   const withIcon = Boolean(Icon && !onlyIcon);
+  const downloadable = Boolean(download && href);
+
+  const buttonContent = (
+    <>
+      {Icon && iconPosition === "left" && !onlyIcon && (
+        <Icon className="icon" />
+      )}
+      {!onlyIcon && text}
+      {Icon && iconPosition === "right" && !onlyIcon && (
+        <Icon className="icon" />
+      )}
+      {onlyIcon && Icon && <Icon className="icon only-icon-size" />}
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={`button ${variant} ${size} ${withIcon ? "with-icon" : ""} ${
+          onlyIcon ? "only-icon" : ""
+        } ${classNames}`}
+        onClick={onClick}
+        download={downloadable}
+      >
+        {buttonContent}
+      </a>
+    );
+  }
 
   return (
     <button
@@ -34,14 +67,7 @@ function Button({
       } ${classNames}`}
       onClick={onClick}
     >
-      {Icon && iconPosition === "left" && !onlyIcon && (
-        <Icon className="icon" />
-      )}
-      {!onlyIcon && text}
-      {Icon && iconPosition === "right" && !onlyIcon && (
-        <Icon className="icon" />
-      )}
-      {onlyIcon && Icon && <Icon className="icon only-icon-size" />}
+      {buttonContent}
     </button>
   );
 }
