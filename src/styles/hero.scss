@@ -32,21 +32,21 @@
   }
 
   &__name {
-    font-size: $text-size-4xl;
+    font-size: $text-size-3xl;
 
     @media screen and (max-width: 768px) {
-      font-size: $text-size-3xl;
+      font-size: $text-size-xl;
     }
   }
 
   &__title {
+    text-shadow: -10px -10px 30px #fff, 10px 10px 30px rgba(0, 122, 255, 0.3);
     font-size: $text-size-xl;
+    font-weight: 500;
 
     @media screen and (max-width: 768px) {
-      font-size: $text-size-lg;
+      font-size: $text-size-md;
     }
-
-    font-weight: 400;
   }
 
   &__image {

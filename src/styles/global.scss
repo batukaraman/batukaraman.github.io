@@ -10,14 +10,11 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  @media screen and (max-width: 768px) {
-    font-size: 14px;
-  }
 }
 
 body {
   font-family: "Open Sans", sans-serif;
-  line-height: 1.65;
+  line-height: 1.5;
   background-color: #f2f4f9;
   color: $blue-70;
 }
@@ -33,12 +30,12 @@ h4,
 h5,
 h6 {
   font-family: "Open Sans", sans-serif;
-  line-height: 1.5;
 }
 
 h1,
 .text-size-h1 {
   font-size: $text-size-4xl;
+  font-weight: 600;
 }
 
 h2,
