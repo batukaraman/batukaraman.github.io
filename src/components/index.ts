@@ -7,3 +7,7 @@ export { default as About } from "./About";
 export { default as GoTop } from "./GoTop";
 export { default as AnimatedDownloadIcon } from "./AnimatedDownloadIcon";
 export { default as AnimatedMailIcon } from "./AnimatedMailIcon";
+export { default as Typewriter } from "./Typewriter";
+export { default as SocialMedia } from "./SocialMedia";
+export { default as SectionHeader } from "./SectionHeader";
+export { default as Skills } from "./Skills";

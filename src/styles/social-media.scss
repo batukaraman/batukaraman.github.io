@@ -1,0 +1,28 @@
+@use "./variables.scss" as *;
+
+.social-menu {
+  &__body {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  &__link {
+    color: currentColor;
+    text-decoration: none;
+  }
+
+  &__icon {
+    font-size: 24px;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(3px 3px 2px rgba($color: $blue-0, $alpha: 0.3));
+    }
+  }
+}

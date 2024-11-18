@@ -2,13 +2,14 @@
 
 .scroll-to-top {
   position: sticky;
-  bottom: 24px;
+  bottom: 1.5rem;
   left: calc(100% - 110px);
   margin-top: calc(100vh + 50px);
+  margin-bottom: 1.5rem;
 
   background-color: $color-white;
   border: 1px solid rgba($blue-70, 0.1);
-  box-shadow: rgba($blue-70, 0.02) 0 1px 3px 0;
+  box-shadow: rgba($blue-70, 0.1) 0 1px 3px 0;
   color: rgba($blue-70, 0.85);
 
   border: none;

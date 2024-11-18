@@ -25,13 +25,13 @@
   }
 
   &.secondary {
-    background-color: $color-white;
+    // background-color: $color-white;
     border: 1px solid rgba($blue-70, 0.1);
     box-shadow: rgba($blue-70, 0.02) 0 1px 3px 0;
     color: rgba($blue-70, 0.85);
 
     &:hover {
-      border-color: rgba($blue-70, 0.15);
+      border-color: rgba($blue-70, 0.5);
       box-shadow: rgba($blue-70, 0.1) 0 4px 12px;
       color: rgba($blue-70, 0.65);
       transform: translateY(-1px);

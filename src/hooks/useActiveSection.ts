@@ -7,6 +7,7 @@ export const links = [
   { label: "Yeterlilik", href: "#qualifıcation" },
   { label: "Hizmetler", href: "#services" },
   { label: "Projeler", href: "#projects" },
+  { label: "İletişim", href: "#contact" },
 ];
 
 export default function useActiveSection() {
