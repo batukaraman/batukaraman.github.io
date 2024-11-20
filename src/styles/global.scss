@@ -15,7 +15,6 @@ html {
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
-  // background-color: #f2f4f9;
   background-color: $color-white;
   color: $blue-70;
 }
@@ -134,4 +133,14 @@ section {
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+}
+
+.badge {
+  display: inline-flex;
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  border-radius: 10rem;
+  background-color: rgba($color: $light-blue-90, $alpha: 0.5);
 }

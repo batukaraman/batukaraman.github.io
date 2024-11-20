@@ -13,6 +13,7 @@ type ButtonType = {
   onClick?: () => void;
   href?: string;
   download?: boolean;
+  target?: React.HTMLAttributeAnchorTarget;
 };
 
 function Button({
@@ -27,6 +28,7 @@ function Button({
   onClick,
   href,
   download,
+  target,
 }: ButtonType) {
   const withIcon = Boolean(Icon && !onlyIcon);
   const downloadable = Boolean(download && href);
@@ -47,6 +49,7 @@ function Button({
   if (href) {
     return (
       <a
+        target={target}
         href={href}
         className={`button ${variant} ${size} ${withIcon ? "with-icon" : ""} ${
           onlyIcon ? "only-icon" : ""

@@ -1,0 +1,13 @@
+@use "./variables.scss" as *;
+
+.projects {
+  &__body {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1rem;
+  }
+}

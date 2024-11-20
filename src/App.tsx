@@ -7,6 +7,7 @@ import {
   GoTop,
   Header,
   Hero,
+  Projects,
   Qualification,
   Skills,
 } from "@/components";
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")!).render(
         <About />
         <Skills />
         <Qualification />
+        <Projects />
       </main>
       <GoTop />
     </Provider>

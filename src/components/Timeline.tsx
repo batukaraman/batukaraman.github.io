@@ -5,6 +5,7 @@ function Timeline({ items }) {
     <div className="timeline">
       {items.map((item, index) => (
         <div
+          key={index}
           className={`timeline__item timeline__item--${
             index % 2 == 0 ? "left" : "right"
           }`}

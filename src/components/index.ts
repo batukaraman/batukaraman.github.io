@@ -14,3 +14,5 @@ export { default as Skills } from "./Skills";
 export { default as Timeline } from "./Timeline";
 export { default as Qualification } from "./Qualification";
 export { default as Tab } from "./Tab";
+export { default as Projects } from "./Projects";
+export { default as ProjectCard } from "./ProjectCard";
