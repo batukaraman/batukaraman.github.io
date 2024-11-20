@@ -4,7 +4,7 @@ export const links = [
   { label: "Ana", href: "#root" },
   { label: "Hakkımda", href: "#about" },
   { label: "Beceriler", href: "#skills" },
-  { label: "Yeterlilik", href: "#qualifıcation" },
+  { label: "Yeterlilik", href: "#qualification" },
   { label: "Hizmetler", href: "#services" },
   { label: "Projeler", href: "#projects" },
   { label: "İletişim", href: "#contact" },

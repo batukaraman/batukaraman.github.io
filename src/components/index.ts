@@ -11,3 +11,6 @@ export { default as Typewriter } from "./Typewriter";
 export { default as SocialMedia } from "./SocialMedia";
 export { default as SectionHeader } from "./SectionHeader";
 export { default as Skills } from "./Skills";
+export { default as Timeline } from "./Timeline";
+export { default as Qualification } from "./Qualification";
+export { default as Tab } from "./Tab";
