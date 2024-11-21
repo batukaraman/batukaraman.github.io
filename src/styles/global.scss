@@ -93,6 +93,14 @@ section {
   animation: envelope 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
+:has(> .animated-icon) .goArrow svg {
+  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+:has(> .animated-icon):hover .goArrow svg {
+  transform: translateX(10px);
+}
+
 @keyframes download {
   0% {
     transform: translateY(-10px);
@@ -112,6 +120,16 @@ section {
 
   100% {
     transform: translateY(0px);
+  }
+}
+
+@keyframes goArrow {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(10px);
   }
 }
 

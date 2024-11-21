@@ -41,6 +41,10 @@
   &.tertiary {
     background-color: transparent;
     color: $color-black;
+
+    &:hover {
+      color: $blue-0;
+    }
   }
 
   :is(&.primary, &.secondary):disabled {

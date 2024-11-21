@@ -16,3 +16,4 @@ export { default as Qualification } from "./Qualification";
 export { default as Tab } from "./Tab";
 export { default as Projects } from "./Projects";
 export { default as ProjectCard } from "./ProjectCard";
+export { default as Services } from "./Services";

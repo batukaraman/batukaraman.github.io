@@ -8,8 +8,7 @@
   overflow: hidden;
 
   &:hover {
-    box-shadow: #fff 0px 4px 16px,
-      rgba($color: $blue-0, $alpha: 0.3) 0px 8px 32px;
+    box-shadow: rgba($color: $blue-0, $alpha: 0.2) 0px 2px 8px 0px;
 
     .project-card__image::after {
       opacity: 1;

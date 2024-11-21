@@ -1,0 +1,40 @@
+@use "./variables.scss" as *;
+
+.services {
+  &__body {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    justify-content: center;
+    align-items: end;
+    gap: 1rem;
+  }
+}
+
+.service-card {
+  height: 100%;
+  border: 1px solid rgba($blue-70, 0.15);
+  border-radius: 20px;
+  padding: 4rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: 0.2s ease-in-out;
+
+  .button {
+    padding: 0;
+  }
+
+  &__icon {
+    stroke-width: 1.5;
+  }
+
+  &:hover {
+    box-shadow: rgba($color: $blue-0, $alpha: 0.2) 0px 2px 8px 0px;
+  }
+}

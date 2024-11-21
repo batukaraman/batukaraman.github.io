@@ -9,6 +9,7 @@ import {
   Hero,
   Projects,
   Qualification,
+  Services,
   Skills,
 } from "@/components";
 import "@/styles/global.scss";
@@ -23,6 +24,7 @@ createRoot(document.getElementById("root")!).render(
         <Skills />
         <Qualification />
         <Projects />
+        <Services />
       </main>
       <GoTop />
     </Provider>
