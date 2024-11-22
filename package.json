@@ -1,15 +1,16 @@
 {
-  "name": "my-portfolio",
+  "name": "portfolio",
   "private": true,
   "version": "2.0",
   "type": "module",
-  "homepage": "https://batukaraman.github.io",
+  "homepage": "https://batukaraman.github.io/portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
