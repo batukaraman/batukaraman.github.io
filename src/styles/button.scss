@@ -43,6 +43,7 @@
     color: $color-black;
 
     &:hover {
+      background-color: rgba($color: $blue-0, $alpha: 0.05);
       color: $blue-0;
     }
   }
