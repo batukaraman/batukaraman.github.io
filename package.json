@@ -3,14 +3,13 @@
   "private": true,
   "version": "2.0",
   "type": "module",
-  "homepage": "http://batukaraman.github.io/",
+  "homepage": ".",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
