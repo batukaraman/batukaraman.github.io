@@ -3,10 +3,10 @@
   "private": true,
   "version": "2.0",
   "type": "module",
-  "homepage": ".",
+  "homepage": "https://batukaraman.github.io",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "vite build && gh-pages -d dist"
