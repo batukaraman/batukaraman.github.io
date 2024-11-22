@@ -8,7 +8,10 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "jsx": "react-jsx",
-    "lib": ["es2015", "dom"]
+    "lib": ["es2015", "dom"],
+    "module": "ESNext",
+    "target": "ES6",
+    "outDir": "./dist"
   },
   "include": ["src", "vite-env.d.ts"]
 }
