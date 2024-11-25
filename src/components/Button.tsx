@@ -67,7 +67,7 @@ function Button({
       disabled={disable}
       className={`button ${variant} ${size} ${withIcon ? "with-icon" : ""} ${
         onlyIcon ? "only-icon" : ""
-      } ${classNames}`}
+      } ${classNames ? classNames : ""}`}
       onClick={onClick}
     >
       {buttonContent}

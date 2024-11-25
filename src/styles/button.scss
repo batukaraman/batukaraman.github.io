@@ -15,9 +15,11 @@
   transition: all 0.2s ease-in-out;
 
   &.primary {
-    background-color: $light-blue-0;
+    background-color: $blue-0;
     color: $color-white;
     &:hover {
+      background-color: $blue-20;
+
       border-color: rgba($blue-70, 0.15);
       box-shadow: rgba($blue-70, 0.1) 0 4px 12px;
       transform: translateY(-1px);
@@ -25,9 +27,9 @@
   }
 
   &.secondary {
-    // background-color: $color-white;
-    border: 1px solid rgba($blue-70, 0.1);
+    border: 1px solid rgba($blue-70, 0.25);
     box-shadow: rgba($blue-70, 0.02) 0 1px 3px 0;
+    background-color: $color-white;
     color: rgba($blue-70, 0.85);
 
     &:hover {
@@ -43,7 +45,6 @@
     color: $color-black;
 
     &:hover {
-      background-color: rgba($color: $blue-0, $alpha: 0.05);
       color: $blue-0;
     }
   }
@@ -66,17 +67,17 @@
   }
 
   &.md {
-    padding: 0 16px;
+    padding: 0 20px;
     font-size: 16px;
     height: 40px;
-    border-radius: 4px;
+    border-radius: 99px;
   }
 
   &.lg {
-    padding: 0 16px;
+    padding: 0 20px;
     font-size: 18px;
     height: 48px;
-    border-radius: 6px;
+    border-radius: 99px;
   }
 
   .icon {

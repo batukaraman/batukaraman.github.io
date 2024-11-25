@@ -1,0 +1,154 @@
+@use "./variables.scss" as *;
+
+.pricing-card {
+  background-color: $color-white;
+  border: 1px solid rgba($color: $blue-70, $alpha: 0.1);
+  padding: 2rem 3.5rem;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  flex: 0 0 calc(33.33% - 1rem);
+  max-width: calc(33.33% - 1rem);
+
+  &.popular {
+    border: 1px solid rgba($color: $blue-0, $alpha: 0.25);
+    animation: shadowPopupar 0.3s ease-in-out forwards;
+
+    @keyframes shadowPopupar {
+      0% {
+        box-shadow: rgba($color: $blue-0, $alpha: 0.25) 0px 0px 0px 0px;
+      }
+      100% {
+        box-shadow: rgba($color: $blue-0, $alpha: 0.25) 0px 0px 100px 0px;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    & h5 {
+      font-size: $text-size-lg;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price {
+    & span:nth-child(1) {
+      font-size: $text-size-2xl;
+      font-weight: bold;
+    }
+
+    & span:nth-child(2) {
+      font-size: $text-size-2xl;
+    }
+
+    & span:nth-child(3) {
+      color: rgba($color: $blue-70, $alpha: 0.8);
+    }
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    & ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      & li {
+        display: flex;
+        align-items: center;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  &__examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    & span {
+      font-weight: 600;
+    }
+
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    & li {
+      color: rgba($color: $blue-70, $alpha: 0.8);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .pricing-card {
+    flex: 0 0 calc(100% - 1rem);
+    max-width: calc(100% - 1rem);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .pricing-card {
+    &__header {
+      flex-direction: row;
+    }
+
+    &__body {
+      gap: 0.5rem;
+    }
+
+    &__features {
+      & ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 1.5rem;
+        row-gap: 0.5rem;
+      }
+    }
+
+    &__examples {
+      & ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 1.5rem;
+        row-gap: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+}

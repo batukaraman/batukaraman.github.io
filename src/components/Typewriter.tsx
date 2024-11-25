@@ -8,7 +8,6 @@ interface TypewriterProps {
 const Typewriter = ({ words, caretType = "default" }: TypewriterProps) => {
   const [css, setCss] = useState("");
 
-  // Memoize steps calculation to prevent recalculations on each render
   const animationSteps = useMemo(() => {
     let grow =
       (100 - words.length * 5) /
@@ -16,17 +15,14 @@ const Typewriter = ({ words, caretType = "default" }: TypewriterProps) => {
     let rate = 0.0;
     let steps = "";
 
-    // Create typing animation steps
     words.forEach((word) => {
-      // Typing part
       for (let i = 0; i <= word.length; i++) {
         steps += `${rate.toFixed(2)}% { content: '${word.slice(0, i)}'; }\n`;
         rate += grow;
       }
 
-      rate += 5 * grow; // Delay between words
+      rate += 5 * grow;
 
-      // Deleting part
       for (let i = word.length; i >= 0; i--) {
         steps += `${rate.toFixed(2)}% { content: '${word.slice(0, i)}'; }\n`;
         rate += grow;
@@ -36,7 +32,6 @@ const Typewriter = ({ words, caretType = "default" }: TypewriterProps) => {
     return steps;
   }, [words]);
 
-  // Create the full CSS including animation and caret behavior
   useEffect(() => {
     const animationCSS = `
       @keyframes typing {
@@ -73,7 +68,6 @@ const Typewriter = ({ words, caretType = "default" }: TypewriterProps) => {
     setCss(animationCSS + typewriterCSS);
   }, [animationSteps]);
 
-  // Classname calculation for caretType
   const getCaretClass = () => {
     switch (caretType) {
       case "thick":
@@ -87,7 +81,7 @@ const Typewriter = ({ words, caretType = "default" }: TypewriterProps) => {
 
   return (
     <span className={`typewriter ${getCaretClass()}`}>
-      <style>{css}</style>
+      <style>{css}</style>&nbsp;
     </span>
   );
 };

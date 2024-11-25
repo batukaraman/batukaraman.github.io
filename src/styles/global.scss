@@ -17,6 +17,7 @@ body {
   line-height: 1.5;
   background-color: $color-white;
   color: $blue-70;
+  position: relative;
 }
 
 p {
@@ -82,7 +83,8 @@ header {
 }
 
 section {
-  padding: clamp(2rem, 2.5vw, 6rem) 1rem;
+  overflow: hidden;
+  padding: 72px 1rem;
 }
 
 :has(> .animated-icon):hover .download {
@@ -91,14 +93,6 @@ section {
 
 :has(> .animated-icon):hover .envelope {
   animation: envelope 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-:has(> .animated-icon) .goArrow svg {
-  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-:has(> .animated-icon):hover .goArrow svg {
-  transform: translateX(10px);
 }
 
 @keyframes download {
@@ -120,16 +114,6 @@ section {
 
   100% {
     transform: translateY(0px);
-  }
-}
-
-@keyframes goArrow {
-  0% {
-    transform: translateX(0px);
-  }
-
-  100% {
-    transform: translateX(10px);
   }
 }
 
@@ -160,5 +144,18 @@ section {
   padding-top: 0.2em;
   padding-bottom: 0.2em;
   border-radius: 10rem;
+}
+
+.badge.secondary {
   background-color: rgba($color: $light-blue-90, $alpha: 0.5);
+}
+
+.badge.primary {
+  background-color: rgba($color: $blue-0, $alpha: 0.05);
+  color: $blue-0;
+}
+
+hr.horizontal {
+  border: 0;
+  border-top: 1px solid rgba($color: $blue-70, $alpha: 0.1);
 }

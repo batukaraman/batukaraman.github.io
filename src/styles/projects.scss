@@ -6,8 +6,23 @@
     max-width: 1200px;
     margin: 0 auto;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
+
+    .project-card {
+      flex: 0 0 calc(33.33% - 1rem);
+      max-width: calc(33.33% - 1rem);
+
+      @media screen and (max-width: 1024px) {
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+      }
+
+      @media screen and (max-width: 768px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
   }
 }

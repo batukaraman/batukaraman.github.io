@@ -43,6 +43,16 @@ const projects: ProjectType[] = [
     sourceLink: "https://github.com/batukaraman/react-todo-list",
     visitLink: "https://react-todo-list-batukaraman.netlify.app/",
   },
+  {
+    image: "./image/tulpar.jpg",
+    title: "Tulpar: Uçuş Değerlendirme Platformu",
+    description:
+      "Türkiye Girişimcilik Vakfı ile yürütülen Airpreneurs 2024 kapsamında Tulpar ekibim ile geliştirdiğimiz uygulama.",
+    type: "Mobile App",
+    techstack: ["React Native", "Typescript", "Reanimated"],
+    sourceLink: "https://github.com/batukaraman/tulpar",
+    visitLink: "https://appetize.io/app/b_dajuozkb75iezabrdndzt3bbom",
+  },
 ];
 
 const tabs: TabItemType[] = [
@@ -52,8 +62,8 @@ const tabs: TabItemType[] = [
       <div className="projects__body">
         {projects
           .filter((word) => word.type == "Web App")
-          .map((project) => (
-            <ProjectCard key={project.title} {...project} />
+          .map((project, index) => (
+            <ProjectCard key={project.title} index={index} {...project} />
           ))}
       </div>
     ),
@@ -65,19 +75,7 @@ const tabs: TabItemType[] = [
         {projects
           .filter((word) => word.type == "Mobile App")
           .map((project) => (
-            <ProjectCard {...project} />
-          ))}
-      </div>
-    ),
-  },
-  {
-    name: "UI/UX Tasarım",
-    element: (
-      <div className="projects__body">
-        {projects
-          .filter((word) => word.type == "UI/UX Tasarım")
-          .map((project) => (
-            <ProjectCard {...project} />
+            <ProjectCard key={project.title} {...project} />
           ))}
       </div>
     ),

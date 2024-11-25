@@ -3,7 +3,7 @@
   "private": true,
   "version": "2.0",
   "type": "module",
-  "homepage": "https://batukaraman.github.io/portfolio/",
+  "homepage": "https://batukaraman.github.io",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

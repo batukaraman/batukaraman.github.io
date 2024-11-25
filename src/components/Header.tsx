@@ -5,19 +5,13 @@ import useToggle from "@/hooks/useToggle";
 import { IoIosMenu } from "react-icons/io";
 import Button from "./Button";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
-import useActiveSection from "@/hooks/useActiveSection";
 
 function Header() {
   const scrollDirection = useScrollDirection();
-  const activeSection = useActiveSection();
   const { handleToggle } = useToggle({ id: "navigation" });
 
   return (
-    <header
-      className={`header ${scrollDirection === "down" ? "hidden" : ""} ${
-        activeSection !== "#root" ? "not-top" : ""
-      }`}
-    >
+    <header className={`header ${scrollDirection === "down" ? "hidden" : ""}`}>
       <div className="header__body">
         <Logo />
         <Button

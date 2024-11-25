@@ -4,12 +4,48 @@ import SocialMedia from "./SocialMedia";
 import Button from "./Button";
 import AnimatedDownloadIcon from "./AnimatedDownloadIcon";
 import AnimatedMailIcon from "./AnimatedMailIcon";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 function Hero() {
+  useScrollAnimation(".leftToRight", {
+    initial: { opacity: "0", transform: "translateX(-50%)" },
+    whileInView: {
+      opacity: "1",
+      transform: "translateX(0)",
+      transition: "all 1s ease-in-out",
+    },
+  });
+
+  useScrollAnimation(".topToBottom", {
+    initial: { opacity: "0", transform: "translateY(-100%)" },
+    whileInView: {
+      opacity: "1",
+      transform: "translateY(0)",
+      transition: "all 1s ease-in-out",
+    },
+  });
+
+  useScrollAnimation(".opacity", {
+    initial: { opacity: "0" },
+    whileInView: {
+      opacity: "1",
+      transition: "all 1s ease-in-out",
+    },
+  });
+
+  useScrollAnimation(".scaleUp", {
+    initial: { opacity: "0", transform: "scale(0.5)" },
+    whileInView: {
+      opacity: "1",
+      transform: "scale(1)",
+      transition: "all 1s ease-in-out",
+    },
+  });
+
   return (
-    <section className="hero">
+    <section id="root" className="hero">
       <div className="hero__info">
-        <div className="hero__text">
+        <div className="hero__text leftToRight">
           <span className="hero__greeting">Merhaba, ben</span>
           <h1 className="hero__name">Batuhan Karaman</h1>
           <strong className="hero__title">
@@ -19,8 +55,10 @@ function Hero() {
             />
           </strong>
         </div>
-        <SocialMedia />
-        <div className="hero__actions">
+        <div className="topToBottom">
+          <SocialMedia />
+        </div>
+        <div className="hero__actions opacity">
           <Button
             text="Özgeçmiş"
             icon={AnimatedDownloadIcon}
@@ -39,7 +77,7 @@ function Hero() {
           />
         </div>
       </div>
-      <div className="hero__image">
+      <div className="hero__image scaleUp">
         <div className="blob"></div>
       </div>
     </section>

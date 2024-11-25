@@ -22,8 +22,8 @@ createRoot(document.getElementById("root")!).render(
         <Hero />
         <About />
         <Skills />
-        <Qualification />
         <Projects />
+        <Qualification />
         <Services />
       </main>
       <GoTop />

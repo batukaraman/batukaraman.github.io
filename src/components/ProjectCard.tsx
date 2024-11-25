@@ -2,6 +2,7 @@ import Button from "./Button";
 import { IoEyeOutline } from "react-icons/io5";
 import { VscSourceControl } from "react-icons/vsc";
 import "@/styles/project-card.scss";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export type ProjectType = {
   image: string;
@@ -11,6 +12,7 @@ export type ProjectType = {
   techstack: string[];
   sourceLink: string | null;
   visitLink: string | null;
+  index?: number;
 };
 
 function ProjectCard({
@@ -20,9 +22,21 @@ function ProjectCard({
   sourceLink,
   description,
   techstack,
+  index,
 }: ProjectType) {
+  const animationDelay = `${index * 0.3}s`;
+
+  useScrollAnimation(".bottomToTop", {
+    initial: { opacity: "0", transform: "translateY(10%)" },
+    whileInView: {
+      opacity: "1",
+      transform: "translateY(0)",
+      transition: `all 1s ease-in-out`,
+    },
+  });
+
   return (
-    <div className="project-card" key={title}>
+    <div className="project-card bottomToTop" key={title}>
       <div className="project-card__image">
         <img src={image} alt="" />
         <div className="project-card__actions">
@@ -32,7 +46,7 @@ function ProjectCard({
               target="_blank"
               icon={IoEyeOutline}
               onlyIcon
-              variant="tertiary"
+              variant="secondary"
               classNames="project-card__visit"
             />
           )}
@@ -42,8 +56,8 @@ function ProjectCard({
               target="_blank"
               icon={VscSourceControl}
               onlyIcon
-              variant="tertiary"
-              classNames="project-card__soruce"
+              variant="secondary"
+              classNames="project-card__source"
             />
           )}
         </div>
@@ -53,7 +67,7 @@ function ProjectCard({
         <div className="project-card__description">{description}</div>
         <div className="project-card__techstack">
           {techstack.map((tech) => (
-            <small className="badge" key={tech}>
+            <small className="badge secondary" key={tech}>
               {tech}
             </small>
           ))}

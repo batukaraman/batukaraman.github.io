@@ -1,8 +1,8 @@
 import SectionHeader from "./SectionHeader";
-import Timeline from "./Timeline";
+import Timeline, { TimelineItem } from "./Timeline";
 import Tab from "./Tab";
 
-const experiences = [
+const experiences: TimelineItem[] = [
   {
     image:
       "https://media.licdn.com/dms/image/v2/C560BAQF4PpTx_q9nYA/company-logo_100_100/company-logo_100_100/0/1630665770589?e=1740009600&v=beta&t=Hft_0_JgZP2tCFbbsyQAPhpCNaaGX0zvMegsrEwP11U",
@@ -41,7 +41,7 @@ const experiences = [
   },
 ];
 
-const education = [
+const education: TimelineItem[] = [
   {
     image:
       "https://media.licdn.com/dms/image/v2/D4D0BAQHr-CYNN5SAcg/company-logo_100_100/company-logo_100_100/0/1683706425339/akdeniz_universitesi_logo?e=1740009600&v=beta&t=tci-OOTasnM10KFbBDIKuXf-t2-9hteODpli4QX4clk",
@@ -64,6 +64,59 @@ Yüksek Onur Öğrencisi`,
   },
 ];
 
+const certificates: TimelineItem[] = [
+  {
+    image:
+      "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1740614400&v=beta&t=BmTkFp2tHdamcroXZTOL27sOWJ-gDOZmun6Zoiz0hxo",
+    title: "Agile with Atlassian Jira",
+    subtitle: "Coursera (Atlassian)",
+    date: "Kas 2023",
+    featured: "Kanban · agile · JIRA · Scrum",
+  },
+  {
+    image:
+      "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1740614400&v=beta&t=BmTkFp2tHdamcroXZTOL27sOWJ-gDOZmun6Zoiz0hxo",
+    title: "Programming with JavaScript",
+    subtitle: "Coursera (Meta)",
+    date: "Kas 2023",
+  },
+  {
+    image:
+      "https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1740614400&v=beta&t=BmTkFp2tHdamcroXZTOL27sOWJ-gDOZmun6Zoiz0hxo",
+    title: "Introduction to Front-End Development",
+    subtitle: "Coursera (Meta)",
+    date: "Eki 2023",
+  },
+  {
+    image:
+      "https://media.licdn.com/dms/image/v2/C4D0BAQHiNSL4Or29cg/company-logo_100_100/company-logo_100_100/0/1631311446380?e=1740614400&v=beta&t=CO4o3B5U5QVZkLaeO_hJV6IwRAyqJYt-8W7I3d3Xvio",
+    title: "Fundamentals of digital marketing",
+    subtitle: "Google",
+    date: "May 2023",
+  },
+  {
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D0BAQGhlnO4Yx6XcA/company-logo_100_100/company-logo_100_100/0/1698136097699/turkcell_gelecei_yazanlar_logo?e=1740614400&v=beta&t=WzOpqMv2wjwDsTqYiY0uG7bFqPnWx57wfxcLSltLvR0",
+    title: "Web Programlama 301",
+    subtitle: "Turkcell Geleceği Yazanlar",
+    date: "Mar 2023",
+  },
+  {
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D0BAQGhlnO4Yx6XcA/company-logo_100_100/company-logo_100_100/0/1698136097699/turkcell_gelecei_yazanlar_logo?e=1740614400&v=beta&t=WzOpqMv2wjwDsTqYiY0uG7bFqPnWx57wfxcLSltLvR0",
+    title: "Python Programlama 401",
+    subtitle: "Turkcell Geleceği Yazanlar",
+    date: "Haz 2022",
+  },
+  {
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D0BAQGhlnO4Yx6XcA/company-logo_100_100/company-logo_100_100/0/1698136097699/turkcell_gelecei_yazanlar_logo?e=1740614400&v=beta&t=WzOpqMv2wjwDsTqYiY0uG7bFqPnWx57wfxcLSltLvR0",
+    title: "Temel Network",
+    subtitle: "Turkcell Geleceği Yazanlar",
+    date: "Haz 2022",
+  },
+];
+
 const tabs = [
   {
     name: "Deneyimler",
@@ -72,6 +125,10 @@ const tabs = [
   {
     name: "Eğitim",
     element: <Timeline items={education} />,
+  },
+  {
+    name: "Sertifikalar",
+    element: <Timeline items={certificates} />,
   },
 ];
 

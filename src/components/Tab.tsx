@@ -46,7 +46,9 @@ export default function Tab({ items }: TabProps) {
         ))}
         <span className="tab__glider" ref={gliderRef}></span>
       </div>
-      <div className="tab__body">{items[activeTab].element}</div>
+      <div className="tab__body" key={items[activeTab].name}>
+        {items[activeTab].element}
+      </div>
     </div>
   );
 }

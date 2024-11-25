@@ -4,37 +4,31 @@ export const links = [
   { label: "Ana", href: "#root" },
   { label: "Hakkımda", href: "#about" },
   { label: "Beceriler", href: "#skills" },
-  { label: "Yeterlilik", href: "#qualification" },
   { label: "Projeler", href: "#projects" },
+  { label: "Yeterlilik", href: "#qualification" },
   { label: "Hizmetler", href: "#services" },
   { label: "İletişim", href: "#contact" },
 ];
 
 export default function useActiveSection() {
-  const [activeSection, setActiveSection] = useState<string>(
-    links[0]?.href || ""
-  );
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries.find((entry) => entry.isIntersecting);
+        if (visibleEntry) {
+          setActiveSection(`#${visibleEntry.target.id}`);
+        }
+      },
+      { root: null, rootMargin: "0px", threshold: 0.6 }
+    );
 
-      const sections = links.map((link) => {
-        const element = document.querySelector(link.href);
-        if (!element) return { href: link.href, top: Infinity };
-        const rect = element.getBoundingClientRect();
-        return { href: link.href, top: rect.top + window.scrollY + 100 };
-      });
+    const sections = Array.from(document.querySelectorAll("section"));
+    sections.forEach((section) => observer.observe(section));
 
-      const visibleSection =
-        sections.find((section) => section.top >= scrollPosition) ||
-        sections[0];
-      setActiveSection(visibleSection.href);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [links]);
+    return () => observer.disconnect();
+  }, []);
 
   return activeSection;
 }
