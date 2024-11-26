@@ -7,6 +7,7 @@ import {
   GoTop,
   Header,
   Hero,
+  Modal,
   Projects,
   Qualification,
   Services,
@@ -18,7 +19,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
       <Header />
-      <main>
+      <main style={{ marginBottom: "100vh" }}>
         <Hero />
         <About />
         <Skills />

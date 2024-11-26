@@ -21,7 +21,7 @@ export default function useActiveSection() {
           setActiveSection(`#${visibleEntry.target.id}`);
         }
       },
-      { root: null, rootMargin: "0px", threshold: 0.6 }
+      { root: null, rootMargin: "0px", threshold: 0.5 }
     );
 
     const sections = Array.from(document.querySelectorAll("section"));

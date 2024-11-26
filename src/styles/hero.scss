@@ -5,7 +5,6 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 2rem;
-  min-height: calc(100vh - 5rem);
   padding-top: 0;
 
   width: 100%;
@@ -88,8 +87,7 @@
     .blob {
       background: url("/image/profile.jpg");
       background-size: cover;
-      background-position: center
-       center;
+      background-position: center center;
       max-width: 400px;
       width: 100%;
       aspect-ratio: 1/1;

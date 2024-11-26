@@ -18,6 +18,11 @@ body {
   background-color: $color-white;
   color: $blue-70;
   position: relative;
+  overflow-x: hidden;
+}
+
+strong {
+  font-weight: 600;
 }
 
 p {
@@ -83,8 +88,11 @@ header {
 }
 
 section {
-  overflow: hidden;
-  padding: 72px 1rem;
+  padding: 56px 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 :has(> .animated-icon):hover .download {

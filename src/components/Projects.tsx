@@ -63,7 +63,7 @@ const tabs: TabItemType[] = [
         {projects
           .filter((word) => word.type == "Web App")
           .map((project, index) => (
-            <ProjectCard key={project.title} index={index} {...project} />
+            <ProjectCard key={index} index={index} {...project} />
           ))}
       </div>
     ),
@@ -74,8 +74,8 @@ const tabs: TabItemType[] = [
       <div className="projects__body">
         {projects
           .filter((word) => word.type == "Mobile App")
-          .map((project) => (
-            <ProjectCard key={project.title} {...project} />
+          .map((project, index) => (
+            <ProjectCard key={index} index={index} {...project} />
           ))}
       </div>
     ),
