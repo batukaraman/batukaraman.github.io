@@ -1,9 +1,7 @@
 import { PricingCardType } from "@/components/PricingCard";
-import {
-  AiOutlineLineChart,
-  AiOutlinePieChart,
-  AiOutlineUser,
-} from "react-icons/ai";
+import { AiOutlineLineChart, AiOutlinePieChart } from "react-icons/ai";
+import { HiOutlineUser } from "react-icons/hi2";
+
 import { BsSliders } from "react-icons/bs";
 import { GoDatabase } from "react-icons/go";
 import {
@@ -84,7 +82,7 @@ export const DevPricing: PricingCardType[] = [
           },
           {
             name: "Kullanıcı Hesap Yönetimi",
-            Icon: AiOutlineUser,
+            Icon: HiOutlineUser,
           },
           {
             name: "Basit Arama Fonksiyonu",

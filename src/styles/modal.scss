@@ -10,15 +10,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+
+    & .modal__body {
+      transform: translateY(0);
+    }
+
+    body {
+      overflow: hidden;
+    }
+  }
 
   &__body {
+    margin: 16px;
     position: relative;
     background-color: $color-white;
     border-radius: 10px;
-    min-width: 50%;
-    min-height: 50%;
+    max-width: 900px;
+    width: 100%;
     padding: 2rem;
     z-index: 5;
+    transform: translateY(-5%);
+    transition: 0.3s ease-in-out;
   }
 
   &__close {
@@ -40,6 +59,98 @@
   }
 }
 
-body:has(> .modal) {
-  overflow: hidden;
+.request-modal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+
+  &__subtitle {
+    font-weight: 500;
+  }
+
+  &__form {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, max-content);
+    }
+
+    & textarea {
+      border: 1px solid rgba($blue-70, 0.15);
+      outline: none;
+      appearance: none;
+      background-color: rgb(255, 255, 255);
+      border-radius: 5px;
+      color: rgba($color: $blue-70, $alpha: 1);
+      display: flex;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 14px;
+      justify-content: center;
+      line-height: 18px;
+      padding: 10px 12px;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      height: 100%;
+      min-height: 400px;
+      max-height: 700px;
+      resize: vertical;
+      font-weight: 400;
+      text-size-adjust: 100%;
+
+      &:focus {
+        box-shadow: rgba($color: $blue-0, $alpha: 0.7) 0px 0px 0px 1px;
+        border: 1px solid rgba($color: $blue-0, $alpha: 0.7);
+      }
+    }
+
+    & input[type="file"] {
+      cursor: pointer;
+      border-radius: 5px;
+      border: 1px solid rgba($blue-70, 0.15);
+      color: rgba($blue-70, 0.7);
+      width: 100%;
+
+      &:hover ~ input[type="file"]::file-selector-button {
+        background-color: red;
+      }
+    }
+
+    & input[type="file"]::file-selector-button {
+      background-color: #fff;
+      color: $blue-70;
+      border: 0px;
+      border-right: 1px solid rgba($blue-70, 0.15);
+      padding: 10px 15px;
+      margin-right: 20px;
+      transition: 0.5s;
+
+      &:has(+ :hover) {
+        background-color: red;
+      }
+    }
+
+    & input[type="file"]::file-selector-button:hover {
+      cursor: pointer;
+      background-color: #eee;
+      border: 0px;
+      border-right: 1px solid rgba($blue-70, 0.15);
+    }
+  }
+
+  &__actions {
+    grid-column: span 2 / span 2;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: end;
+    @media (max-width: 768px) {
+      grid-column: 1;
+    }
+  }
 }

@@ -4,7 +4,7 @@ import Button from "./Button";
 import { IoCheckmarkOutline } from "react-icons/io5";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { BsArrowRight } from "react-icons/bs";
-import React from "react";
+import React, { memo } from "react";
 
 type PricingCardListItemType = {
   name: string;
@@ -29,7 +29,7 @@ export interface PricingCardType {
   onSecondaryButtonClick?: () => void;
 }
 
-function PricingCard({
+const PricingCard = memo(function PricingCard({
   title,
   description,
   price,
@@ -128,6 +128,6 @@ function PricingCard({
       )}
     </div>
   );
-}
+});
 
 export default PricingCard;

@@ -2,9 +2,10 @@ import SectionHeader from "./SectionHeader";
 import "@/styles/services.scss";
 import Tab, { TabItemType } from "./Tab";
 import PricingCard, { PricingCardType } from "./PricingCard";
-import Modal from "./Modal";
 import { DesignPricing, DevPricing, EduPricing } from "@/data";
-import { useState } from "react";
+import useToggle from "@/hooks/useToggle";
+import { useAppDispatch } from "@/hooks/useRedux";
+import { setService } from "@/store/serviceSlice";
 
 type ServiceType = {
   title: string;
@@ -27,7 +28,16 @@ const servies: ServiceType[] = [
 ];
 
 function Services() {
-  const [open, setOpen] = useState(false);
+  const { handleOpen } = useToggle({
+    id: "modal-request-dev-static",
+  });
+
+  const dispatch = useAppDispatch();
+
+  const handleOpenRequestModal = (serviceName: string, packageName: string) => {
+    dispatch(setService({ serviceName, packageName }));
+    handleOpen();
+  };
 
   const tabs: TabItemType[] = servies.map(({ title, prices }) => {
     return {
@@ -38,7 +48,9 @@ function Services() {
             <PricingCard
               key={index}
               {...item}
-              onPrimaryButtonClick={() => setOpen(true)}
+              onPrimaryButtonClick={() =>
+                handleOpenRequestModal(title, item.title)
+              }
             />
           ))}
         </div>
@@ -50,10 +62,6 @@ function Services() {
     <section className="services" id="services">
       <SectionHeader text="Hizmetler" />
       <Tab items={tabs} />
-      {/* <Modal isOpen={open} setOpen={setOpen}>
-        <h3>Talep Gönderme</h3>
-        <p>Bu modal, Talep Gönderme işlemleri için gösteriliyor.</p>
-      </Modal> */}
     </section>
   );
 }

@@ -19,3 +19,4 @@ export { default as ProjectCard } from "./ProjectCard";
 export { default as Services } from "./Services";
 export { default as PricingCard } from "./PricingCard";
 export { default as Modal } from "./Modal";
+export { default as RequestModal } from "./RequestModal";

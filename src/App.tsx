@@ -10,6 +10,7 @@ import {
   Modal,
   Projects,
   Qualification,
+  RequestModal,
   Services,
   Skills,
 } from "@/components";
@@ -27,6 +28,7 @@ createRoot(document.getElementById("root")!).render(
         <Qualification />
         <Services />
       </main>
+      <RequestModal />
       <GoTop />
     </Provider>
   </StrictMode>
