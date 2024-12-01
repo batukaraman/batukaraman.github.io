@@ -1,0 +1,47 @@
+@use "./variables.scss" as *;
+
+.zone {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.drop-zone {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px dashed rgba($blue-70, 0.15);
+}
+
+.drag-files,
+.drop-files {
+  padding: 1rem;
+  border-radius: inherit;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  width: 100%;
+  margin-top: 1rem;
+  overflow-y: auto;
+
+  & li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

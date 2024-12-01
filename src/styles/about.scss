@@ -3,6 +3,11 @@
 .about {
   background-color: rgba($color: $light-blue-90, $alpha: 0.5);
 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   &__body {
     width: 100%;
     max-width: 1200px;

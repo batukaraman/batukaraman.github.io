@@ -5,6 +5,23 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar {
+    border-radius: 10px;
+    width: 10px;
+    background-color: #fdfdfd;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #b6b6b6;
+  }
 }
 
 html {
@@ -92,10 +109,6 @@ header {
 
 section {
   padding: 56px 1rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 :has(> .animated-icon):hover .download {

@@ -1,6 +1,11 @@
 @use "./variables.scss" as *;
 
 .skills {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   &__part {
     display: flex;
     flex-direction: column;

@@ -5,18 +5,19 @@ import { IoCloseOutline } from "react-icons/io5";
 import "@/styles/modal.scss";
 import useToggle from "@/hooks/useToggle";
 
-function Modal({ id, state, children }) {
+function Modal({ id, children }) {
   const modalRef = useRef(null);
   const { isOpen, handleClose } = useToggle({
     id,
-    state,
+    state: false,
     elementRef: modalRef,
     closeOnClickOutside: false,
+    closeOnScroll: false,
   });
 
   return createPortal(
     <div className={`modal ${isOpen ? "show" : "hidden"}`} ref={modalRef}>
-      <div className="modal__body">
+      <div className="modal__content">
         {children}
         <Button
           variant="tertiary"

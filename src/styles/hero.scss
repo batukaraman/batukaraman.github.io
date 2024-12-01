@@ -11,6 +11,8 @@
   max-width: 1200px;
   margin: 0 auto;
 
+  min-height: 100vh;
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-auto-rows: max-content;
@@ -89,7 +91,7 @@
       background-size: cover;
       background-position: center center;
       max-width: 400px;
-      width: 100%;
+      width: 60%;
       aspect-ratio: 1/1;
       box-shadow: rgba(0, 122, 255, 0.4) -5px 5px,
         rgba(0, 122, 255, 0.3) -10px 10px, rgba(0, 122, 255, 0.2) -15px 15px,

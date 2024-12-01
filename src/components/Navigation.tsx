@@ -10,6 +10,7 @@ function Navigation() {
   const { isOpen } = useToggle({
     id: "navigation",
     elementRef: navRef,
+    closeOnScroll: true,
   });
 
   return (

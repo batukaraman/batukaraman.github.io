@@ -15,7 +15,7 @@ function useToggle({
   state = false,
   elementRef,
   closeOnClickOutside = true,
-  closeOnScroll = true,
+  closeOnScroll = false,
 }: useToggleType) {
   const dispatch = useAppDispatch();
 

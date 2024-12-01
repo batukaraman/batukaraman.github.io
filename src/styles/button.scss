@@ -50,6 +50,38 @@
     }
   }
 
+  &.is-loading {
+    pointer-events: none;
+    &.primary {
+      background-color: $light-blue-70;
+      cursor: default;
+    }
+
+    &.secondary {
+      border-color: rgba($color: $blue-70, $alpha: 0.1);
+      color: rgba($color: $blue-70, $alpha: 0.7);
+      cursor: default;
+    }
+
+    &.tertiary {
+      background-color: $color-white;
+      color: $light-blue-70;
+    }
+  }
+
+  & .is-loading {
+    animation: spin 2s linear infinite;
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
   :is(&.primary, &.secondary):disabled {
     background-color: $light-blue-70;
     cursor: default;

@@ -29,7 +29,7 @@ const servies: ServiceType[] = [
 
 function Services() {
   const { handleOpen } = useToggle({
-    id: "modal-request-dev-static",
+    id: "modal-request",
   });
 
   const dispatch = useAppDispatch();

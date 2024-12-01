@@ -20,3 +20,4 @@ export { default as Services } from "./Services";
 export { default as PricingCard } from "./PricingCard";
 export { default as Modal } from "./Modal";
 export { default as RequestModal } from "./RequestModal";
+export { default as FilePicker } from "./FilePicker";

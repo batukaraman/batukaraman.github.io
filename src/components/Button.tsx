@@ -1,5 +1,6 @@
 import { IconType } from "react-icons";
 import "@/styles/button.scss";
+import { LiaSpinnerSolid } from "react-icons/lia";
 
 type ButtonType = {
   text?: string;
@@ -14,6 +15,7 @@ type ButtonType = {
   href?: string;
   download?: boolean;
   target?: React.HTMLAttributeAnchorTarget;
+  isLoading?: boolean;
 };
 
 function Button({
@@ -29,12 +31,14 @@ function Button({
   href,
   download,
   target,
+  isLoading = false,
 }: ButtonType) {
   const withIcon = Boolean(Icon && !onlyIcon);
   const downloadable = Boolean(download && href);
 
   const buttonContent = (
     <>
+      {isLoading && <LiaSpinnerSolid className="is-loading" />}
       {Icon && iconPosition === "left" && !onlyIcon && (
         <Icon className="icon" />
       )}
@@ -53,7 +57,7 @@ function Button({
         href={href}
         className={`button ${variant} ${size} ${withIcon ? "with-icon" : ""} ${
           onlyIcon ? "only-icon" : ""
-        } ${classNames}`}
+        } ${isLoading ? "is-loading" : ""} ${classNames}`}
         onClick={onClick}
         download={downloadable}
       >
@@ -67,7 +71,7 @@ function Button({
       disabled={disable}
       className={`button ${variant} ${size} ${withIcon ? "with-icon" : ""} ${
         onlyIcon ? "only-icon" : ""
-      } ${classNames ? classNames : ""}`}
+      } ${isLoading ? "is-loading" : ""} ${classNames ? classNames : ""}`}
       onClick={onClick}
     >
       {buttonContent}
